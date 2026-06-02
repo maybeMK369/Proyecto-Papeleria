@@ -1,4 +1,4 @@
-# React + Vite
+# React + Vite(Si quieren leerlo esta bien :) solo explica un poco react y una libreria llamada vite(es para la base de datos luego)
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
