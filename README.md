@@ -1,2 +1,1 @@
-# Galaga-proyecto
-# Proyecto-Papeleria
+
