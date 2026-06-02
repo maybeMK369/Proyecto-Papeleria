@@ -1,65 +1,81 @@
 # ✏️ Sistema de Papelería Escolar - UNIVA
 
-Este proyecto es una aplicación web desarrollada en **React + Vite**, diseñada para administrar los servicios y procesos de una papelería escolar.
+Aplicación web para la gestión y venta de productos de papelería escolar, desarrollada con **React** y **Vite**.
 
 ## 👥 Equipo de Desarrollo y Roles
-
-Para mantener el proyecto organizado y asegurar un flujo de trabajo eficiente, las responsabilidades están distribuidas de la siguiente manera:
 
 * **Andrés:** FullStack Developer
 * **Hanna:** Project Manager & FrontEnd Developer
 * **Munny:** BackEnd Developer
-* **Keren:** BackEnd o FrontEnd (Por confirmar)
-* **Sofía:** Documentación 
+* **Keren:** BackEnd / FrontEnd Developer
+* **Sofía:** Documentación
 * **Victoria:** FrontEnd Developer
 
-## 🚀 Tecnologías Principales
+## 🚀 Tecnologías
 
-* **Frontend:** React con Vite (JavaScript)
-* **Backend / Base de Datos:** [Por definir - Posiblemente Supabase]
-* **Hosting (Despliegue):** [Por definir - Posiblemente GitHub Pages o Vercel]
+* **Frontend:** React 19 + Vite
+* **Backend / Base de Datos:** Por definir (posible Supabase)
+* **Hosting:** Por definir (posible GitHub Pages o Vercel)
 
 ## ⚙️ Requisitos Previos
 
-Antes de descargar el proyecto, asegúrate de tener instalado:
-1. [Node.js](https://nodejs.org/) (Versión LTS recomendada).
-2. [Git](https://git-scm.com/) para el control de versiones.
+1. [Node.js](https://nodejs.org/) (Version LTS recomendada)
+2. [Git](https://git-scm.com/) para control de versiones
+
+## 📐 Estructura del Proyecto
+
+```
+Papeleria/
+├── Papeleria/
+│   ├── src/
+│   │   ├── App.jsx          # Componente principal
+│   │   ├── App.css          # Estilos de App
+│   │   ├── index.css        # Estilos globales
+│   │   └── main.jsx         # Punto de entrada
+│   ├── public/              # Archivos estaticos
+│   ├── index.html           # HTML base
+│   ├── package.json         # Dependencias y scripts
+│   └── vite.config.js       # Configuracion de Vite
+└── README.md
+```
 
 ## 🛠️ Instalación y Configuración Local
 
-Sigue estos pasos para correr el proyecto en tu entorno local:
-
 1. **Clonar el repositorio:**
-```bash
-   git clone [https://github.com/maybeMK369/Proyecto-Papeleria.git](https://github.com/maybeMK369/Proyecto-Papeleria.git)
-Entrar a la carpeta del proyecto:
+   ```bash
+   git clone https://github.com/maybeMK369/Proyecto-Papeleria.git
+   ```
 
-Bash
-   cd Proyecto-Papeleria
-Instalar las dependencias:
+2. **Entrar al directorio del proyecto:**
+   ```bash
+   cd Papeleria/Papeleria
+   ```
 
-Bash
+3. **Instalar dependencias:**
+   ```bash
    npm install
-Iniciar el servidor de desarrollo:
+   ```
 
-Bash
+4. **Iniciar el servidor de desarrollo:**
+   ```bash
    npm run dev
-El proyecto se abrirá localmente, por lo general en http://localhost:5173/.
+   ```
 
-📂 Estructura del Proyecto
-/src: Contiene todo el código fuente de React (Componentes, estilos, etc.).
+5. **Abrir en el navegador:**
+   La app estara disponible en `http://localhost:5173`
 
-/public: Archivos estáticos como imágenes o íconos que no pasan por el compilador.
+## 📦 Comandos Disponibles
 
-package.json: Lista de dependencias y scripts del proyecto.
+| Comando | Descripcion |
+|---------|-------------|
+| `npm run dev` | Inicia el servidor de desarrollo |
+| `npm run build` | Compila el proyecto para produccion |
+| `npm run preview` | Vista previa del build de produccion |
+| `npm run lint` | Ejecuta ESLint para revisar el codigo |
 
-📋 Flujo de Trabajo (Git Workflow)
-Para evitar conflictos en el código de todos, seguiremos estas reglas:
+## 📋 Flujo de Trabajo (Git Workflow)
 
-Nadie trabaja directamente en la rama main.
-
-Para cada nueva tarea, crea una rama (ejemplo: git checkout -b feature/login).
-
-Sube tu rama y crea un Pull Request para que el equipo lo revise antes de fusionarlo.
-
-Documentación mantenida por Sofía. Coordinación a cargo de Hanna.
+* Nadie trabaja directamente en la rama `main`
+* Para cada tarea, crea una rama: `git checkout -b feature/nombre`
+* Sube tu rama y crea un Pull Request para revision
+* Documentacion mantenida por Sofia. Coordinacion a cargo de Hanna.
