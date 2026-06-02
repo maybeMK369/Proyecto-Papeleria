@@ -76,6 +76,5 @@ Papeleria/
 ## 📋 Flujo de Trabajo (Git Workflow)
 
 * Nadie trabaja directamente en la rama `main`
-* Para cada tarea, crea una rama: `git checkout -b feature/nombre`
 * Sube tu rama y crea un Pull Request para revision
 * Documentacion mantenida por Sofia. Coordinacion a cargo de Hanna.
