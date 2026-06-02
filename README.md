@@ -1,4 +1,4 @@
-# ✏️ Sistema de Papelería Escolar - UNIVA
+# ✏️Pape
 
 Aplicación web para la gestión y venta de productos de papelería escolar, desarrollada con **React** y **Vite**.
 
@@ -7,7 +7,7 @@ Aplicación web para la gestión y venta de productos de papelería escolar, des
 * **Andrés:** FullStack Developer
 * **Hanna:** Project Manager & FrontEnd Developer
 * **Munny:** BackEnd Developer
-* **Keren:** BackEnd / FrontEnd Developer
+* **Keren:** BackEnd o FrontEnd Developer nse
 * **Sofía:** Documentación
 * **Victoria:** FrontEnd Developer
 
