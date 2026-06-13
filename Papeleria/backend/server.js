@@ -10,17 +10,16 @@ const CABECERAS_CORS = {
   "Access-Control-Allow-Headers": "Content-Type, Authorization",
 };
 
-const productos = [
-  { id: 1, nombre: "Bolígrafo Gel Azul", categoria: "Escritura", precio: 15.5, imagen: "https://picsum.photos/seed/boligrafo/200/200" },
-  { id: 2, nombre: "Lápiz Grafito HB", categoria: "Escritura", precio: 8.0, imagen: "https://picsum.photos/seed/lapiz/200/200" },
-  { id: 3, nombre: "Cuaderno Profesional 100 Hojas", categoria: "Escolar", precio: 65.0, imagen: "https://picsum.photos/seed/cuaderno/200/200" },
-  { id: 4, nombre: "Mochila Escolar Reforzada", categoria: "Escolar", precio: 450.0, imagen: "https://picsum.photos/seed/mochila/200/200" },
-  { id: 5, nombre: "Grapas de Acero 6700 pzas", categoria: "Oficina", precio: 67.0, imagen: "https://picsum.photos/seed/grapas/200/200" },
-  { id: 6, nombre: "Cinta Adhesiva Transparente", categoria: "Oficina", precio: 22.0, imagen: "https://picsum.photos/seed/cinta/200/200" },
-  { id: 7, nombre: "Set de Colores Prismacolor 24 pzs", categoria: "Arte", precio: 320.0, imagen: "https://picsum.photos/seed/colores/200/200" },
-  { id: 8, nombre: "Acuarelas  12 colores", categoria: "Arte", precio: 185.0, imagen: "https://picsum.photos/seed/acuarelas/200/200" },
-  { id: 9, nombre: "Teclado Inalámbrico USB", categoria: "Computo", precio: 399.0, imagen: "https://picsum.photos/seed/teclado/200/200" },
-  { id: 10, nombre: "Mouse Ergonómico ", categoria: "Computo", precio: 250.0, imagen: "https://picsum.photos/seed/mouse/200/200" },
+const productos = [//Agregen las imagenes de cada producto aca, las imagenes van en la carpeta imagenes y se llaman aqui
+  { id: 1, nombre: "Bolígrafo Gel Azul", categoria: "Escritura", precio: 15.5, imagen: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVKaIm2GuzQba4oBR1vmPwzQVBtjPqI29heTzuD1BmfjBhBB1rLJImx8Y6&s=10" },
+  { id: 2, nombre: "Lápiz Grafito HB", categoria: "Escritura", precio: 8.0, imagen: "https://cloudfront-us-east-1.images.arcpublishing.com/prisaradiomx/ACTEDS4BGJPN5AR7RFLQUJYOPU.jpg" },
+  { id: 3, nombre: "Cuaderno Profesional 100 Hojas", categoria: "Escolar", precio: 65.0, imagen: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_ikXhTJp2aX4FBTuG9XK1bc6v3AzxiBwWn_3OpKmBY2L1E59mPFosXs0&s=10" },
+  { id: 4, nombre: "Mochila Escolar Reforzada", categoria: "Escolar", precio: 450.0, imagen: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3HWkxPBTY68lYUQDlInUoIefnyhAAcFjg-J6Bzb2fUGXwN7yoEZVEwnum&s=10" },
+  { id: 5, nombre: "Grapas de Acero 6700 pzas", categoria: "Oficina", precio: 67.0, imagen: "https://cdnx.jumpseller.com/finsa/image/15336501/Cinta_Transparente_de_2_x_100_mts_231215.jpg?1664300738" },
+  { id: 7, nombre: "Set de Colores Prismacolor 24 pzs", categoria: "Arte", precio: 320.0, imagen: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBtTa3OxQPzrBcy8__ehbEy7manhTAOZYJncnS6OOkdw&s" },
+  { id: 8, nombre: "Acuarelas  12 colores", categoria: "Arte", precio: 185.0, imagen: "https://superpapelera.com.mx/wp-content/uploads/2023/05/2020041.webp" },
+  { id: 9, nombre: "Teclado Inalámbrico USB", categoria: "Computo", precio: 399.0, imagen: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQllxk-sO6q_DDRPdORkwj3H2I2XMN9JAHQfJ28YSQHQkFyjniuRUaG1xBg&s=10" },
+  { id: 10, nombre: "Mouse Ergonómico ", categoria: "Computo", precio: 250.0, imagen: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5IMJVx1lj8_xCgq2rXByaWjmJrwdpSN3s-m5UTzxqA0FrfL8mDHzVu_67&s=10" },
 ];
 
 const sucursales = [
@@ -30,9 +29,9 @@ const sucursales = [
 ];
 
 const ofertas = [
-  { id: 1, productoId: 1, tituloOferta: "2x1 en Bolígrafos Gel", descuentoPorcentaje: 50, precioOferta: 7.75, activa: true },
-  { id: 2, productoId: 7, tituloOferta: "Colores Prismacolor con 30% de descuento", descuentoPorcentaje: 30, precioOferta: 224.0, activa: true },
-  { id: 3, productoId: 9, tituloOferta: "Teclado Inalámbrico", descuentoPorcentaje: 40, precioOferta: 239.4, activa: false },
+  { id: 1, productoId: 1, tituloOferta: "2x1 en Bolígrafos Gel", descuentoPorcentaje: 50, precioOferta: 7.75, precioOriginal: 15.5, activa: true, imagen: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVKaIm2GuzQba4oBR1vmPwzQVBtjPqI29heTzuD1BmfjBhBB1rLJImx8Y6&s=10", descripcion: "Promoción especial en bolígrafos gel azul" },
+  { id: 2, productoId: 7, tituloOferta: "Colores Prismacolor con 30% de descuento", descuentoPorcentaje: 30, precioOferta: 224.0, precioOriginal: 320.0, activa: true, imagen: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBtTa3OxQPzrBcy8__ehbEy7manhTAOZYJncnS6OOkdw&s", descripcion: "Set de colores Prismacolor 24 piezas" },
+  { id: 3, productoId: 9, tituloOferta: "Teclado Inalámbrico", descuentoPorcentaje: 40, precioOferta: 239.4, precioOriginal: 399.0, activa: false, imagen: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQllxk-sO6q_DDRPdORkwj3H2I2XMN9JAHQfJ28YSQHQkFyjniuRUaG1xBg&s=10", descripcion: "Teclado inalámbrico USB ergonómico" },
 ];
 
 // Genera ID único autoincremental para ofertas
@@ -97,7 +96,10 @@ const servidor = http.createServer(async (solicitud, respuesta) => {
         tituloOferta: datosOferta.tituloOferta,
         descuentoPorcentaje: datosOferta.descuentoPorcentaje,
         precioOferta: datosOferta.precioOferta,
+        precioOriginal: datosOferta.precioOriginal || datosOferta.precioOferta,
         activa: datosOferta.activa,
+        imagen: datosOferta.imagen || '',
+        descripcion: datosOferta.descripcion || '',
       };
       ofertas.push(nuevaOferta);
       enviarRespuestaJSON(respuesta, 201, { mensaje: "Oferta creada exitosamente", oferta: nuevaOferta });
@@ -142,7 +144,10 @@ const servidor = http.createServer(async (solicitud, respuesta) => {
         tituloOferta: datosActualizados.tituloOferta ?? ofertas[indiceOferta].tituloOferta,
         descuentoPorcentaje: datosActualizados.descuentoPorcentaje ?? ofertas[indiceOferta].descuentoPorcentaje,
         precioOferta: datosActualizados.precioOferta ?? ofertas[indiceOferta].precioOferta,
+        precioOriginal: datosActualizados.precioOriginal ?? ofertas[indiceOferta].precioOriginal,
         activa: datosActualizados.activa ?? ofertas[indiceOferta].activa,
+        imagen: datosActualizados.imagen ?? ofertas[indiceOferta].imagen,
+        descripcion: datosActualizados.descripcion ?? ofertas[indiceOferta].descripcion,
       };
 
       //6: Enviar respuesta de éxito con la oferta actualizada
