@@ -471,3 +471,133 @@ select.entrada-formulario {
   width: 100%;
   padding: 10px 20px;
 }
+
+/* Servicio al Cliente - Formulario de Contacto */
+.pagina-servicio {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.formulario-contacto {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.titulo-contacto {
+  font-size: 20px;
+  font-weight: 800;
+  color: #1a1a2e;
+  text-align: center;
+  margin: 0 0 16px 0;
+  letter-spacing: 1px;
+}
+
+.formulario-contacto .campo-formulario {
+  justify-content: center;
+}
+
+.formulario-contacto .etiqueta-campo {
+  min-width: 140px;
+  font-size: 15px;
+}
+
+.formulario-contacto .entrada-formulario {
+  max-width: 500px;
+}
+
+.contenedor-boton-enviar {
+  display: flex;
+  justify-content: center;
+  margin-top: 24px;
+}
+
+.boton-enviar {
+  background: #1a3a5c;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 16px 64px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+  min-width: 200px;
+}
+
+.boton-enviar:hover {
+  background: #2a4a6c;
+}
+
+/* Layout principal con sticky footer */
+.contenedor-app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100svh;
+}
+
+.contenido-principal {
+  flex: 1;
+}
+
+/* Footer global */
+.pie-pagina {
+  background: linear-gradient(135deg, #1a3a5c 0%, #2a4a6c 100%);
+  padding: 32px 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-top: auto;
+}
+
+.pie-pagina-contenido {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.pie-pagina-info {
+  flex: 1;
+  min-width: 250px;
+}
+
+.pie-pagina-titulo {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+  letter-spacing: 0.5px;
+}
+
+.pie-pagina-redes {
+  display: flex;
+  gap: 16px;
+}
+
+.red-social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  color: #fff;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.red-social:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.red-social svg {
+  width: 20px;
+  height: 20px;
+}
