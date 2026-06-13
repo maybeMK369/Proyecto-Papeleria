@@ -153,3 +153,19 @@ Asegúrate de que el backend esté corriendo. El formulario hace un `GET` a `/ap
 - **El login no es funcional.** Al hacer clic en "INGRESAR" navega directamente al panel sin validar credenciales.
 - **Los archivos vacíos** (marcados como "vacío, para futuro uso") están creados para que el equipo los llene según avance el proyecto.
 - **Variables en español.** Toda la nomenclatura del proyecto usa español (componentes, variables, clases CSS).
+
+## Comandos de GitHub
+
+**Antes de programar (Para tener todo actualizado)** 
+git checkout main
+git pull origin main 
+git checkout nombreDeSuRama
+
+**Para subir sus cambios a su rama**
+git add .
+git commit -m "explicacion de sus cambios"
+git push origin nombreDeSuRama
+
+
+
+
