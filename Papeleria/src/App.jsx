@@ -6,7 +6,7 @@ import Productos from './views/Productos'
 import Sucursales from './views/Sucursales'
 import Ofertas from './views/Ofertas'
 import Servicio from './views/Servicio'
-import Admin from './views/Admin'
+import Admin from './views/admin/Admin'
 
 function App() {
   return (
@@ -18,7 +18,7 @@ function App() {
         <Route path="/sucursales" element={<Sucursales />} />
         <Route path="/ofertas" element={<Ofertas />} />
         <Route path="/servicio" element={<Servicio />} />
-        <Route path="/admin" element={<Admin />} />
+        <Route path="/admin/*" element={<Admin />} />
       </Routes>
     </BrowserRouter>
   )
