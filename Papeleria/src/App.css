@@ -601,3 +601,39 @@ select.entrada-formulario {
   width: 20px;
   height: 20px;
 }
+
+/* ------- MAPA DE SUCURSALES -------- */
+.pagina-sucursales {
+  display: flex;
+  justify-content: space-around; 
+  align-items: flex-start;
+  flex-wrap: wrap;               
+  gap: 20px;
+  padding: 40px 20px;
+}
+
+.contenedor-mapa {
+  width: 300px !important;       
+  height: 300px !important;      
+  background-color: #dcdcdc;     
+  border-radius: 50% !important; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;           
+}
+
+.contenedor-mapa img {
+  width: 86% !important;        
+  height: 86% !important;      
+  border-radius: 50% !important;
+  object-fit: cover !important; 
+}
+
+.sucursal-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;          
+  text-align: center;
+  margin: 20px;
+}
