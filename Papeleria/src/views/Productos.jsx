@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import CardCatalogo from '../components/ui/CardCatalogo';
 
 function Productos() {
   const [productos, setProductos] = useState([]);
@@ -35,16 +36,19 @@ function Productos() {
   }
 
   return (
-    <div>
+    <div className="pagina-ofertas">
       <h2>Lista de Productos</h2>
-      {productos.map(productos => (
-        <div key={productos.id} className="productos-card">
-          <img src={productos.imagen} alt={productos.nombre} />
-          <h3>{productos.nombre}</h3>
-          <p>Categoría: {productos.categoria}</p>
-          <p>Precio: ${productos.precio}</p>
-        </div>
-      ))}
+      <div className="grid-catalogo">
+        {productos.map((producto) => (
+          <CardCatalogo
+            key={producto.id}
+            imagen={producto.imagen}
+            titulo={producto.nombre}
+            precioOriginal={producto.precio}
+            mostrarBoton={false}
+          />
+        ))}
+      </div>
     </div>
   );
 }

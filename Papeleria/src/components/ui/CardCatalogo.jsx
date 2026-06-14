@@ -2,7 +2,7 @@ import BotonPrincipal from './BotonPrincipal'
 
 // Carta reutilizable para productos y ofertas
 // Si no hay descuento, solo muestra el precio normal
-export default function CardCatalogo({ imagen, titulo, precioOriginal, precioOferta, descuento, esOferta = false }) {
+export default function CardCatalogo({ imagen, titulo, precioOriginal, precioOferta, descuento, esOferta = false, mostrarBoton = true }) {
   return (
     <div className="card-catalogo">
       <div className="card-imagen-contenedor">
@@ -23,7 +23,7 @@ export default function CardCatalogo({ imagen, titulo, precioOriginal, precioOfe
           </div>
         )}
         
-        <BotonPrincipal texto="Comprar" variante="oscuro" onClick={() => {}} />
+        {mostrarBoton && <BotonPrincipal texto="Comprar" variante="oscuro" onClick={() => {}} />}
       </div>
     </div>
   )
