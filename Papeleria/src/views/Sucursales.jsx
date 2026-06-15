@@ -8,7 +8,7 @@ import mapa3 from '../assets/sucursal3.png.png';
 
 export default function Sucursales() {
   return (
-    <div className="pagina-sucursales">
+    <div className="contenedor-sucursales">
 
       {/* SUCURSAL 1 */}
       <div className="sucursal-card">
@@ -31,3 +31,4 @@ export default function Sucursales() {
     </div>
   );
 }
+

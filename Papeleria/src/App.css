@@ -602,38 +602,270 @@ select.entrada-formulario {
   height: 20px;
 }
 
-/* ------- MAPA DE SUCURSALES -------- */
-.pagina-sucursales {
+/* ------- Carrusel -------- */
+
+.contenedor-carrusel-nativo {
   display: flex;
-  justify-content: space-around; 
-  align-items: flex-start;
-  flex-wrap: wrap;               
   gap: 20px;
-  padding: 40px 20px;
+  overflow-x: auto; /* Permite el deslizamiento de lado a lado */
+  padding: 20px 10px;
+  scroll-behavior: smooth;
+  scrollbar-width: none; /* Oculta la barra en Firefox */
 }
 
-.contenedor-mapa {
-  width: 300px !important;       
-  height: 300px !important;      
-  background-color: #dcdcdc;     
-  border-radius: 50% !important; 
+.contenedor-carrusel-nativo::-webkit-scrollbar {
+  display: none;
+}
+
+.tarjeta-producto {
+  flex: 0 0 250px; 
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 16px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border: 1px solid #f0f0f0;
+}
+
+.contenedor-img-producto {
+  width: 100%;
+  height: 180px;
+  background-color: #f9f9f9;
+  border-radius: 12px;
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden;           
+  overflow: hidden;
+}
+
+.contenedor-img-producto img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.nombre-producto {
+  font-size: 16px;
+  color: #444;
+  margin: 15px 0 8px 0;
+  height: 44px;
+  overflow: hidden;
+}
+
+.precio-producto {
+  font-size: 18px;
+  color: #000;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.boton-agregar-carrito {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.indicador-deslizar {
+  text-align: center;
+  color: #888;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+/* IMAGEN DE FONDO */
+.banner-heroe {
+  width: 100%;
+  min-height: 500px; 
+  background-image: url('../src/assets/hero.png'); 
+  background-size: cover;      
+  background-position: center;  
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 60px 20px;
+}
+
+.titulo-seccion {
+  text-align: center;
+  color: #ffffff; 
+  text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  margin-bottom: 20px;
+  font-size: 32px;
+}
+
+/* SUCURSALES */
+.contenedor-mapa {
+  width: 300px; 
+  height: 300px; 
+  background-color: #dcdcdc; 
+  border-radius: 50%; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; 
 }
 
 .contenedor-mapa img {
-  width: 86% !important;        
-  height: 86% !important;      
-  border-radius: 50% !important;
-  object-fit: cover !important; 
+  width: 90%; 
+  height: 90%; 
+  border-radius: 50%;
+  object-fit: cover; 
 }
 
 .sucursal-card {
   display: flex;
   flex-direction: column;
-  align-items: center;          
+  align-items: center;         
   text-align: center;
-  margin: 20px;
+  margin: 10px;
 }
+
+.contenedor-sucursales {
+  display: flex;            
+  justify-content: center;  
+  gap: 40px;               
+  flex-wrap: wrap;         
+  padding: 20px;
+  width: 100%;
+}
+
+
+/* CARRUSEL */
+.wrapper-carrusel-flechas {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.contenedor-carrusel-3d {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 40px 0;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  width: 100%;
+  
+  /* HACE QUE SE QUEDEN IMANTADAS AL CENTRO AL DESPLAZARSE */
+  scroll-snap-type: x mandatory;
+  
+  /* Agrega espacio gigante a los lados para que la primera tarjeta empiece en el centro exacto */
+  padding-left: calc(50% - 120px);  
+  padding-right: calc(50% - 120px); 
+  
+  /* Creamos un contenedor de scroll para la animación automática */
+  scroll-timeline: --carrusel inline;
+}
+
+.contenedor-carrusel-3d::-webkit-scrollbar {
+  display: none;
+}
+
+/* Tarjetas base */
+.tarjeta-producto-3d {
+  flex: 0 0 240px;
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 16px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  scroll-snap-align: center; /* Obliga a la tarjeta a alinearse al centro de la pantalla */
+  
+  /* ANIMACIÓN AUTOMÁTICA INTELIGENTE */
+  /* El navegador detecta cuando pasa por el centro usando la vista de scroll y cambia el tamaño sola */
+  view-timeline: --tarjeta inline;
+  animation-name: auto-crecer;
+  animation-timeline: --tarjeta;
+  animation-bounds: entry 0% exit 100%;
+  transition: transform 0.3s ease;
+}
+
+/* La regla que hace crecer automáticamente a la tarjeta que esté cruzando el centro */
+@keyframes auto-crecer {
+  0%, 100% {
+    transform: scale(0.88);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    margin: 0; /* Las de los lados se quedan tranquilas */
+  }
+  50% {
+    transform: scale(1.12);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+    /* Le añade un espacio extra a la tarjeta del centro a la izquierda y derecha 
+       para empujar a las vecinas y que NUNCA se peguen */
+    margin: 0 25px; 
+  }
+}
+
+/* Estilos internos limpios y sin transparencias */
+.contenedor-img-producto {
+  width: 100%;
+  height: 180px;
+  background-color: #f9f9f9;
+  border-radius: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.contenedor-img-producto img {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+}
+.nombre-producto {
+  font-size: 16px;
+  color: #333;
+  margin: 15px 0 8px 0;
+  height: 40px;
+  overflow: hidden;
+}
+.precio-producto {
+  font-size: 18px;
+  color: #000;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+.boton-agregar-carrito {
+  background-color: #222;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  width: 100%;
+  font-weight: 600;
+}
+
+/* Flechas */
+.flecha-carrusel {
+  background: #ffffff;
+  color: #333333;
+  border: none;
+  font-size: 24px;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  transition: background 0.3s, transform 0.2s;
+  z-index: 10;
+  user-select: none;
+}
+.flecha-carrusel:hover {
+  background: #222;
+  color: #fff;
+}
+.flecha-carrusel.izq { margin-right: 15px; }
+.flecha-carrusel.der { margin-left: 15px; }
