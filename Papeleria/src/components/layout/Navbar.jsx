@@ -13,6 +13,7 @@ export default function BarraNavegacion() {
   const esRutaAdmin = ubicacion.pathname.startsWith('/admin')
   const esLogin = ubicacion.pathname === '/admin'
   const esPanel = ubicacion.pathname === '/admin/panel'
+  const RutaProductos = ubicacion.pathname === '/productos'
 
   // Mostrar botón ADMIN en todas las rutas excepto login y panel
   const mostrarAdmin = !esLogin && !esPanel
@@ -34,16 +35,18 @@ export default function BarraNavegacion() {
         </div>
 
         {/* -------Barra de búsqueda -------  (Falta funcionalidad)*/}
-        <div name="barra-busqueda-principal" className="barra-busqueda" style={{ position: 'relative', left: '130px', top: '15px' }}>
-          <span className="icono-busqueda">&#128269;</span>
-          <input
-            type="text"
-            className="entrada-busqueda-admin"
-            placeholder="Buscar productos"
-            //value={busqueda}
-            //onChange={(e) => setBusqueda(e.target.value)}
-          />
-        </div>
+        {RutaProductos && (
+          <div name="barra-busqueda-principal" className="barra-busqueda" style={{ position: 'relative', left: '130px', top: '15px' }}>
+            <span className="icono-busqueda">&#128269;</span>
+            <input
+              type="text"
+              className="entrada-busqueda-admin"
+              placeholder="Buscar productos"
+              //value={busqueda}
+              //onChange={(e) => setBusqueda(e.target.value)}
+            />
+          </div>
+        )}
 
                 {/* ESTO NO ME LO TOQUEN SON LOS BOTONES DE HOME Y REGRESO DE ADMIN */}
         <div className="area-acciones-admin"> 
