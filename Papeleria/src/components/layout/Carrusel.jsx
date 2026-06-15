@@ -1,5 +1,5 @@
-import React from 'react';
-import "../../App.css"; 
+import React, { useRef, useEffect } from 'react';
+import "../../App.css";
 
 {/* PRODUCTOS */}
 const productos = [//Agregen las imagenes de cada producto aca, las imagenes van en la carpeta imagenes y se llaman aqui
@@ -15,22 +15,54 @@ const productos = [//Agregen las imagenes de cada producto aca, las imagenes van
 ];
 
 export default function Carrusel() {
+  const carruselRef = useRef(null);
+
+  // En cuanto abre la página, mueve el scroll al segundo producto
+  useEffect(function() {
+    if (carruselRef.current) {
+      const cantidadA_Desplazar = 260; // Ancho de una tarjeta (240px) + el espacio gap (20px)
+      carruselRef.current.scrollLeft = cantidadA_Desplazar;
+    }
+  }, []); // Los corchetes vacíos aseguran que solo se ejecute UNA vez al cargar
+
+  const moverCarrusel = function(direccion) {
+    if (carruselRef.current) {
+      const tarjetaAncho = 260; 
+      if (direccion === 'izquierda') {
+        carruselRef.current.scrollLeft -= tarjetaAncho;
+      } else {
+        carruselRef.current.scrollLeft += tarjetaAncho;
+      }
+    }
+  };
+
   return (
     <div className="seccion-carrusel">
       <h2 className="titulo-seccion">Todos los Productos</h2>
       
-      {/* Contenedor */}
-      <div className="contenedor-carrusel-nativo">
-        {productos.map((producto) => (
-            <div className="tarjeta-producto" key={producto.id}>
-                <div className="contenedor-img-producto">
-                    <img src={producto.imagen} alt={producto.nombre} />
-                </div>
-                <h3 className="nombre-producto">{producto.nombre}</h3>
-                <p className="precio-producto">${producto.precio.toFixed(2)}</p>
-                <button className="boton-agregar-carrito">Ver Detalles</button>
+      <div className="wrapper-carrusel-flechas">
+        
+        <button className="flecha-carrusel izq" onClick={function() { moverCarrusel('izquierda'); }}>
+          &#10094;
+        </button>
+
+        <div className="contenedor-carrusel-3d" ref={carruselRef}>
+          {productos.map((producto) => (
+            <div className="tarjeta-producto-3d" key={producto.id}>
+              <div className="contenedor-img-producto">
+                <img src={producto.imagen} alt={producto.nombre} />
+              </div>
+              <h3 className="nombre-producto">{producto.nombre}</h3>
+              <p className="precio-producto">${producto.precio.toFixed(2)}</p>
+              <button className="boton-agregar-carrito">Ver Detalles</button>
             </div>
-        ))}
+          ))}
+        </div>
+
+        <button className="flecha-carrusel der" onClick={function() { moverCarrusel('derecha'); }}>
+          &#10095;
+        </button>
+
       </div>
     </div>
   );
